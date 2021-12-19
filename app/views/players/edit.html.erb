@@ -1,0 +1,46 @@
+<%= content_for(:title, "edit #{@players.first_name}" )%>
+
+<h1>
+	hello from edit
+</h1><!-- 
+<% if flash[:errors] %>
+		<% flash[:errors].each do |e| %>
+			<%= e %>
+		<% end %>
+	<% end %> -->
+<%= render partial: "players/form"%>
+<!-- 
+<%= form_for(@players) do |f|%>
+
+<p>
+	<%=f.label :first_name %><br>
+	<%= f.text_field :first_name %><br>
+</p>
+<p>
+	<%=f.label :last_name %><br>
+	<%= f.text_field :last_name %><br>
+</p>
+<p>
+	<%=f.submit%>
+</p>
+<%end%> -->
+<!-- 
+<form action="/players/<%= @players.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%form_authenticity_token%>">
+	<p>
+		<label>
+			first name 
+		</label>
+		<input type="text" name="player[first_name]" value="<%=@players.first_name%>">
+	</p>
+	<p>
+		<label>
+			last name 
+		</label>
+		<input type="text" name="player[last_name]" value="<%=@players.last_name%>">
+	</p>
+	<input type="submit" value="update">
+</form>-->
+<%= link_to"home page" , root_path%>  
+<!-- <a href="/players">Go back</a>-->

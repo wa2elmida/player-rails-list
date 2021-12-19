@@ -1,0 +1,15 @@
+<%= content_for(:title, "players" )%>
+<h1>hello from rails this is <%= @players.length%> player in our team</h1>
+<% @players.each do |player| %>
+<%= player.first_name%> 
+<%= player.last_name%>
+<%= link_to "show page" , player_path(player.id) %>
+<!-- <a href="/players/<%= player.id %>">show profile</a> |-->
+<%= link_to "edit page" , player_edit_path(player.id)%>
+<!-- <a href="/players/<%= player.id %>/edit">edit profile</a>  -->|
+<%= link_to "delete page" , player_path(player.id) , data: {method: :delete , confirm: "are you sure ?"}%>
+<!-- <a href="/players/<%= player.id %>" data-method="delete" data-confirm="are you sure ?">delete</a>
+ -->
+<br><%end%>
+<!-- <a href="/players/new">New Player</a> -->
+<%= link_to "new player" , players_new_path %>
